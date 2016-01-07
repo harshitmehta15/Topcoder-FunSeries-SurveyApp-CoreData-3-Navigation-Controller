@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7C1998351C114D3C00706FB2 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C1998341C114D3C00706FB2 /* DetailViewController.swift */; };
 		879A88AD1C0A18DB002CF6E3 /* SurveyModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 879A88AB1C0A18DB002CF6E3 /* SurveyModel.xcdatamodeld */; };
 		879A88B01C0A1A82002CF6E3 /* Survey+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 879A88AE1C0A1A82002CF6E3 /* Survey+CoreDataProperties.swift */; };
 		879A88B11C0A1A82002CF6E3 /* Survey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 879A88AF1C0A1A82002CF6E3 /* Survey.swift */; };
@@ -30,6 +31,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7C1998341C114D3C00706FB2 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		879A88AC1C0A18DB002CF6E3 /* SurveyModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SurveyModel.xcdatamodel; sourceTree = "<group>"; };
 		879A88AE1C0A1A82002CF6E3 /* Survey+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Survey+CoreDataProperties.swift"; path = "CoreData/Survey+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		879A88AF1C0A1A82002CF6E3 /* Survey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Survey.swift; path = CoreData/Survey.swift; sourceTree = "<group>"; };
@@ -102,6 +104,7 @@
 				EE7E9ACA1BBA734900391478 /* Images.xcassets */,
 				EE7E9ACC1BBA734900391478 /* LaunchScreen.xib */,
 				EE7E9AC11BBA734900391478 /* Supporting Files */,
+				7C1998341C114D3C00706FB2 /* DetailViewController.swift */,
 			);
 			path = "Topcoder-FunSeries-SurveyApp";
 			sourceTree = "<group>";
@@ -238,6 +241,7 @@
 				EE7E9AC61BBA734900391478 /* ViewController.swift in Sources */,
 				EE7E9AC41BBA734900391478 /* AppDelegate.swift in Sources */,
 				879A88B11C0A1A82002CF6E3 /* Survey.swift in Sources */,
+				7C1998351C114D3C00706FB2 /* DetailViewController.swift in Sources */,
 				879A88AD1C0A18DB002CF6E3 /* SurveyModel.xcdatamodeld in Sources */,
 				879A88B01C0A1A82002CF6E3 /* Survey+CoreDataProperties.swift in Sources */,
 			);

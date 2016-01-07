@@ -11,7 +11,6 @@ import CoreData
 
 class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate,UISearchBarDelegate,UISearchDisplayDelegate, NSFetchedResultsControllerDelegate {
     
-    
     var managedObjectContext:NSManagedObjectContext?
     var fetchController:NSFetchedResultsController = NSFetchedResultsController()
     
@@ -22,11 +21,9 @@ class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate
     var titleData :[String] = []
     var i: Int = 0
     var flag: Bool = false;
+    var selectedSurvey: Survey?
     
     @IBOutlet var SurveyTableSearchBar: UISearchBar!
-    
-    
-    @IBOutlet var Label: UILabel!
     @IBOutlet var SurveyTable: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -138,6 +135,13 @@ class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate
         return data
     }
     
+    // SEGUE
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "showDetail" {
+            let destinationVC = segue.destinationViewController as! DetailViewController
+            destinationVC.descriptionString = self.selectedSurvey?.desc
+        }
+    }
     
     //MARK: UITableViewDataSource
     
@@ -160,6 +164,13 @@ class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate
             return fetchedObjects.count
         }
         return 0
+    }
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        if let surveys = self.fetchController.fetchedObjects as? [Survey] {
+            self.selectedSurvey = surveys[indexPath.row]
+            self.performSegueWithIdentifier("showDetail", sender: nil)
+        }
     }
     
     func tableView(SurveyTable: UITableView,
