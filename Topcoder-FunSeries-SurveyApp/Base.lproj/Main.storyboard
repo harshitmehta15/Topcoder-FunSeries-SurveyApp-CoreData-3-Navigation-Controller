@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="15C40a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="sQ2-Me-uXs">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="sQ2-Me-uXs">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
@@ -48,11 +48,11 @@
                                         <rect key="frame" x="0.0" y="22" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="lQg-9r-1WH" id="mxX-hb-jCT">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="oIs-UI-QFb">
-                                                    <rect key="frame" x="15" y="0.0" width="570" height="43"/>
+                                                    <rect key="frame" x="15" y="0.0" width="570" height="43.5"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <animations/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
@@ -66,10 +66,21 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="sDy-0a-Sqr">
+                            <searchBar contentMode="redraw" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="biZ-vY-AVB">
+                                <rect key="frame" x="0.0" y="0.0" width="0.0" height="44"/>
+                                <animations/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="vXZ-lx-hvc" id="hlZ-Ye-zQI"/>
+                                </connections>
+                            </searchBar>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="io1-5G-tsU">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
                                 <animations/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="vXZ-lx-hvc" id="ZwD-rc-csp"/>
+                                </connections>
                             </searchBar>
                         </subviews>
                         <animations/>
@@ -79,14 +90,14 @@
                             <constraint firstItem="Eab-lq-7eB" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="topMargin" id="42c-QM-xbB"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Eab-lq-7eB" secondAttribute="trailing" constant="-16" id="6hE-It-bPT"/>
                             <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="Eab-lq-7eB" secondAttribute="bottom" id="753-aX-qJr"/>
-                            <constraint firstAttribute="trailing" secondItem="sDy-0a-Sqr" secondAttribute="trailing" id="DSu-K8-noF"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="io1-5G-tsU" secondAttribute="trailing" constant="-20" id="7Xi-6W-PH0"/>
+                            <constraint firstItem="Eab-lq-7eB" firstAttribute="top" secondItem="io1-5G-tsU" secondAttribute="bottom" id="GNi-bk-Bgk"/>
                             <constraint firstItem="Eab-lq-7eB" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="-16" id="Jc4-Bt-Yfc"/>
-                            <constraint firstItem="Eab-lq-7eB" firstAttribute="top" secondItem="sDy-0a-Sqr" secondAttribute="bottom" id="Krf-Yi-hdy"/>
                             <constraint firstAttribute="trailing" secondItem="Eab-lq-7eB" secondAttribute="trailing" id="RI9-Qy-AIS"/>
-                            <constraint firstItem="sDy-0a-Sqr" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="THW-yP-bQ1"/>
+                            <constraint firstItem="io1-5G-tsU" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="-20" id="eJB-Bd-NFE"/>
                             <constraint firstItem="Eab-lq-7eB" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="fXn-qP-N7w"/>
+                            <constraint firstItem="io1-5G-tsU" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" id="mPK-Jr-A1x"/>
                             <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="Eab-lq-7eB" secondAttribute="bottom" id="ngt-gN-8Of"/>
-                            <constraint firstItem="sDy-0a-Sqr" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" id="pxK-06-0BT"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
@@ -108,8 +119,8 @@
                     <navigationItem key="navigationItem" title="FunSeries-SurveyApp" id="1sG-lH-kQ2"/>
                     <connections>
                         <outlet property="SurveyTable" destination="Eab-lq-7eB" id="gDA-OU-foH"/>
-                        <outlet property="SurveyTableSearchBar" destination="sDy-0a-Sqr" id="DxP-tz-UO6"/>
-                        <outlet property="searchDisplayController" destination="Clg-2d-MOy" id="muq-z5-ktm"/>
+                        <outlet property="SurveyTableSearchBar" destination="io1-5G-tsU" id="DTA-dU-mFw"/>
+                        <outlet property="searchDisplayController" destination="jlj-AK-kyF" id="n76-nD-yjK"/>
                         <segue destination="Jrr-r7-SHF" kind="show" identifier="showDetail" id="2e9-aB-x51"/>
                     </connections>
                 </viewController>
@@ -120,6 +131,15 @@
                         <outlet property="searchContentsController" destination="vXZ-lx-hvc" id="1So-C5-xSA"/>
                         <outlet property="searchResultsDataSource" destination="vXZ-lx-hvc" id="ZHu-eE-bkY"/>
                         <outlet property="searchResultsDelegate" destination="vXZ-lx-hvc" id="XU0-fb-ttG"/>
+                    </connections>
+                </searchDisplayController>
+                <searchDisplayController id="jlj-AK-kyF">
+                    <connections>
+                        <outlet property="delegate" destination="vXZ-lx-hvc" id="hTk-1T-byf"/>
+                        <outlet property="searchBar" destination="biZ-vY-AVB" id="12E-rg-68D"/>
+                        <outlet property="searchContentsController" destination="vXZ-lx-hvc" id="Cn3-8b-cGf"/>
+                        <outlet property="searchResultsDataSource" destination="vXZ-lx-hvc" id="Bhu-ye-olg"/>
+                        <outlet property="searchResultsDelegate" destination="vXZ-lx-hvc" id="ADa-o0-4Ng"/>
                     </connections>
                 </searchDisplayController>
             </objects>

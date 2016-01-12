@@ -24,6 +24,7 @@ class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate
     var selectedSurvey: Survey?
     
     @IBOutlet var SurveyTableSearchBar: UISearchBar!
+    
     @IBOutlet var SurveyTable: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -84,6 +85,7 @@ class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate
             // Fetching data from local store 
             let request = NSFetchRequest()
             let entity = NSEntityDescription.entityForName("Survey", inManagedObjectContext: self.managedObjectContext!)
+            
             let sortDescriptor = NSSortDescriptor(key: "title", ascending: true)
             let predicate = NSPredicate(format:"isdeleted = 0")
             request.predicate = predicate
